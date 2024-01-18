@@ -1,0 +1,52 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+footer{    
+  .fondo-footer{
+    height: 20rem;
+    background-color: v.$Dewey-1-rgba;
+
+    .contenedor-m{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;                  
+      column-gap: 5rem;            
+      padding: 3.5rem 7rem 1rem 7rem;
+      color: white;
+      p {
+        font-weight: 500;
+      }
+
+      .icono{
+        width: 12rem;        
+      }
+      .texto-footer{        
+        justify-self: center;                
+      }
+      .pseudoenlaces-footer{
+        display: flex;
+        gap: 2rem;
+        justify-self: flex-end;
+        a {
+          color: white;
+      
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .enlace-footer {
+      font-size: 1.2rem;
+      font-weight: 200;      
+      text-align: center;
+      color: white;
+      a {
+        color: white;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }  
+}

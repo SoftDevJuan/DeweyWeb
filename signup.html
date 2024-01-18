@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="build/css/app.css">
+  <!-- <link rel="preload" href="build/css/app.css" as="style"> -->
+  <!-- Fuente principal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;500;700&family=Raleway:wght@200;300;400;500;700&display=swap"
+    rel="stylesheet">
+    <script>
+      // Función para obtener el mensaje de la URL
+      function obtenerMensajeDeURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const mensaje = urlParams.get('mensaje');
+        return mensaje;
+      }
+    
+      // Función para mostrar el mensaje en un alert
+      function mostrarAlerta() {
+        const mensaje = obtenerMensajeDeURL();
+        if (mensaje) {
+          alert(mensaje);
+        }
+      }
+    
+      // Llama a la función para mostrar el mensaje al cargar la página
+      mostrarAlerta();
+    </script>
+  <title>Crear cuenta Dewey</title>
+</head>
+
+<body class="background-form">
+  <main>
+    <form class="formulario-cuenta registro" action="registrar_usuario.php" method="post">
+      <div class="formulario-contenido">
+        <div class="contenedor-icono">
+          <a href="index.html">
+            <img class="icono" src="./build/img/iconoDewey_1.svg" alt="Icono Dewey">
+          </a>
+        </div>
+        <h1>Crea tu cuenta</h1>
+        <input class="campo" type="text" name="name" placeholder="Nombre" required>
+        <input class="campo" type="text" name="last-name" placeholder="Apellidos" required>
+        <input class="campo" type="text" name="spot" placeholder="Puesto" required>
+        <input class="campo" type="text" name="group" placeholder="Organización" required>
+        <input class="campo" type="email" name="email" placeholder="Correo electrónico" required>
+        <input class="campo" type="password" name="password" placeholder="Contraseña" required>
+        <input class="campo" type="password" name="password-confirmation" placeholder="Confirma tu contraseña" required>
+        <div class="formulario-texto">
+          <p>
+            ya tienes cuenta?
+          </p>
+          <a href="login.html"> inicia sesión!</a>
+        </div>
+        <input id="submit--signup" class="submit" type="submit" value="Siguiente">
+      </div>
+    </form>
+  </main>
+</body>
+
+
+</html>

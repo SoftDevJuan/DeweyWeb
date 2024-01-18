@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="build/css/app.css">
+  <!-- <link rel="preload" href="build/css/app.css" as="style"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;500;700&family=Raleway:wght@200;300;400;500;700&display=swap"
+    rel="stylesheet">
+    <script>
+      // Función para obtener el mensaje de la URL
+      function obtenerMensajeDeURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const mensaje = urlParams.get('mensaje');
+        return mensaje;
+      }
+    
+      // Función para mostrar el mensaje en un alert
+      function mostrarAlerta() {
+        const mensaje = obtenerMensajeDeURL();
+        if (mensaje) {
+          alert(mensaje);
+        }
+      }
+    
+      // Llama a la función para mostrar el mensaje al cargar la página
+      mostrarAlerta();
+    </script>
+  <title>Tablero - Dewey</title>
+</head>
+
+<body class="body-home">
+  <header class="header-home">
+    <div class="header-home__contenedor">
+      <div class="header-home__logo">
+        <a href="home.html">
+          <img class="icono" src="./build/img/iconoDewey_White.svg" alt="Icono Dewey">
+        </a>
+      </div>
+
+      <div class="user">
+        <a class="user__help" href="learnmore.html" target="_blank">
+          <img class="help" src="build/img/help.png" alt="Usuario" title="Aprende más">
+        </a>
+        <div class="user__account">
+          <img class="user__photo" src="build/img/ballena-perfil__white.png" alt="Usuario">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="home">
+    <nav class="nav">
+      <div class="profile">
+        <div class="profile__info">
+          <h2 class="profile__name">Diego Antonio Angel Rodriguez</h2>
+          <h3 class="profile__type">
+            Administrador
+          </h3>
+          <h3 class="profile__email">
+            2122300432@soy.utj.edu.mx
+          </h3>
+        </div>
+      </div>
+
+      <ul class="list">
+        <li class="list__item">
+          <div class="list__button">
+            <img class="list__img" src="build/img/icono-opcion_1.png" alt="Tablero central">
+            <h3 class="nav__link">Tablero central</h3>
+          </div>
+        </li>
+
+        <li class="list__item">
+          <div class="list__button">
+            <img class="list__img" src="build/img/icono-opcionadmin__1.png" alt="Tablero central">
+            <h3 class="nav__link">Nueva tarea</h3>
+          </div>
+        </li>
+
+        <li class="list__item list__item--click">
+          <div class="list__button list__button--click">
+            <img class="list__img" src="build/img/icono-opcionadmin__2.png" alt="Tablero central">
+            <h3 class="nav__link">Equipo de trabajo</h3>            
+          </div>
+        </li>
+
+        <li class="list__item list__item--click">
+          <div class="list__button list__button--click">
+            <img class="list__img" src="build/img/icono-opcion_3.png" alt="Tablero central">
+            <h3 class="nav__link">Estadisticas</h3>
+            <img class="list__arrow" src="build/img/arrow.png" alt="Tablero central">
+          </div>
+
+          <ul class="list__show">
+            <li class="list__inside">
+              <h3 class="nav__link nav__link--inside">Productividad</h3>
+              <h3 class="nav__link nav__link--inside">Retrasos</h3>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="table">
+      <!-- <div class="make-task">        
+        <h2 class="make-task__title">Crea tu tarea</h2>
+        <form action="" class="make-task__form">
+          <label class="make-task__label" for="title">Nombra tu tarea</label>
+          <input class="make-task__input" type="text" name="title">
+          <label class="make-task__label" for="owner">Responsable</label>
+          <input class="make-task__input" type="text" name="owner">
+          <label class="make-task__label" for="date">Fecha de termino</label>
+          <input class="make-task__input" type="date" name="date">          
+          <label class="make-task__label" for="date">Descripción de la tarea</label>
+          <textarea class="make-task__input make-task__input--description" name="description" id="make-task__description" cols="30" rows="5"></textarea>
+
+          <input class="submit submit--make-task" type="submit" value="Crear">
+        </form>
+
+        <div class="make-task__img">          
+          <img loading="lazy" src="build/img/task-form__image.png" alt="Crea tu tarea">
+        </div>      
+      </div> -->
+
+      <ul class="tasks tasks--boss">
+        <li class="tasks__item">
+          <h2 class="tasks__name">Nombre de la tarea</h2>
+          <div class="tasks__properties">
+            <h3 class="tasks__propertie">Responsable: <span class="username">Nombre responsable</span></h3>
+            <h3 class="tasks__propertie" for="change-status">Estatus: <span class="status">Estatus de la tarea</span><input type="checkbox" name="change-status"></h3>
+            <h3 class="tasks__propertie">Fecha limite: <span class="date">Fecha limite de cumplimiento</span></h3>            
+          </div>
+          <div class="tasks__description">
+            <p>
+              Descripcion de la tarea
+            </p>
+            <h3 class="tasks__delete">Eliminar</h3>            
+          </div>          
+        </li>
+      </ul>
+      
+      <!-- <ul class="tasks">
+        <li class="tasks__item">
+          <h2 class="tasks__name">Nombre de la tarea</h2>
+          <div class="tasks__properties">
+            <h3 class="tasks__propertie">Responsable: <span class="username">Nombre responsable</span></h3>
+            <h3 class="tasks__propertie" for="change-status">Estatus: <span class="status">Estatus de la tarea</span><input type="checkbox" name="change-status"></h3>
+            <h3 class="tasks__propertie">Fecha limite: <span class="date">Fecha limite de cumplimiento</span></h3>            
+          </div>
+          <div class="tasks__description">
+            <p>
+              Descripcion de la tarea
+            </p>            
+          </div>
+        </li>
+      </ul> -->
+
+      <!-- <div class="table__content table__content--notasks">
+        <div class="table__icon">
+          <img src="build/img/tabla-central.png" alt="">
+        </div>
+        <div class="table__text">
+          <h1>Bienvenido <span class="username">Diego Antonio Angel Rodriguez</span></h1>
+          <h2>Parece que aún no tienes ningún plan. Crea uno y organiza las tareas de tu equipo.</h2>
+        </div>
+      </div> -->
+    </section>
+  </div>
+
+  <script src="build/js/side-menu.js"></script>
+</body>
+
+</html>

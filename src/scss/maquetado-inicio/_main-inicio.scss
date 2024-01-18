@@ -1,0 +1,104 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.main{
+  width: 100vw;
+  height: calc(100vh - 6rem);
+  position: relative;
+  
+  .square {
+    position: absolute;
+    bottom: 0;    
+    right: 0rem;
+    background-color: white;
+    width: calc(15% + 2px);    
+    height: 16rem;
+  }
+}
+.contenedor-main{
+  width: 70%;
+  //max-width: 110rem;    
+  height: 100%;
+  margin: 0 auto;  
+  position: relative;
+  
+  .contenido-main{
+    width: 100%;    
+    color: white;
+    padding: 0 7rem;
+    position: absolute;
+    bottom: 21rem;
+    p{
+      font-family: v.$secundaryFont;
+      font-weight: bold;
+      font-size: 6rem;
+      margin-top: 5rem;
+      span{
+        display: block;
+      }
+      @include m.escritorio-m{
+        font-size: 7rem;        
+      }
+      @include m.escritorio-s{
+        font-size: 10rem;
+      }
+      @include m.escritorio-g{
+        font-size: 11.5rem;
+      }
+    }
+  }
+  .footer-inicio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    width: 100%;    
+    height: 16rem;    
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 5px;
+    padding: 5rem 7rem 5rem 7rem;
+
+    .footer-boton{
+      text-align: center;
+      width: 20rem;
+      padding: 2rem 2rem;
+      font-size: 1.6rem;
+      background-color: v.$Dewey-1-rgba;
+      border: 2px solid v.$Dewey-1-rgba;
+      transition: transform .2s ease-in-out, box-shadow .15s ease-in-out;
+      @include m.escritorio-m{
+        font-size: 2rem;
+        width: 25rem;
+      }
+      @include m.escritorio-s{
+        font-size: 2.4rem;
+        width: 30rem;
+      }
+    }
+    .footer-texto{
+      flex: .8;      
+      font-family: v.$secundaryFont;
+      font-size: 1.6rem;
+      font-weight: 500;
+      
+      span{
+        font-size: 1.4rem;
+        font-weight: 400;
+      }      
+      @include m.escritorio-m {
+          font-size: 1.6rem;
+          span{
+            font-size: 1.4rem;
+          }
+        }
+      
+      @include m.escritorio-s {        
+        font-size: 1.8rem;
+        span{
+          font-size: 1.6rem;
+        }        
+      }
+    }
+  }
+}

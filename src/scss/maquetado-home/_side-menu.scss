@@ -1,0 +1,124 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.home{
+  display: flex;
+
+  height: calc(100vh - 6rem);
+  width: 100vw;
+  position: relative;
+  .nav{
+    display: flex;  
+    flex-direction: column;
+    width: 30rem;
+    height: 100%;    
+    background-color: white;
+    border-right: 1px solid #F0F0F0;
+    position: absolute;
+    left: 0;  
+  
+    .profile{
+      width: 80%;
+      margin: 3rem 0 1rem 0;
+      .profile__info{
+        h2{        
+          font-size: 1.8rem;
+          font-weight: 400;
+          border-bottom: 1px solid v.$Dewey-1-rgba;
+          padding-bottom: .5rem;
+        }
+        h3{
+          margin-top: 1rem;
+          font-size: 1.4rem;
+          font-weight: 400;
+          font-family: v.$secundaryFont;
+          &:last-of-type{
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    .list{
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      display: flex;
+      justify-content: start;
+      flex-direction: column;  
+      margin: 0;
+      padding-top: 4rem;
+      border-top: 1px solid #F0F0F0;
+  
+      .list__item{
+        width: 100%;
+        text-align: center;
+        overflow: hidden;            
+  
+        .arrow{
+          .list__arrow{
+            transform: rotate(90deg);
+          }
+        }      
+        .list__button{
+          display: grid;
+          grid-template-columns: 1fr 3fr 1fr;
+          column-gap: 2rem;
+          align-items: center;
+          width: 100%;
+          cursor: pointer;
+          &:hover {
+            background: #F6F8FA;
+          }
+          
+          .list__img{
+            width: 1.6rem;
+            //margin-right: 2rem;
+            justify-self: right;
+          }
+          .list__arrow{
+            height: 1.2rem;
+            //margin-left: auto;
+            transition: transform .3s;
+            justify-self: left;
+          }
+          .nav__link{
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #303440;
+            display: block;
+            padding: 1.5rem 0;
+            cursor: pointer;
+            justify-self: left;                    
+          }
+        }
+      }
+      .list__item--click{
+        cursor: pointer;
+      }
+  
+      .list__show{
+        width: 80%;
+        height: 0;      
+        margin-left: auto;      
+        transition: height .4s;
+        padding-left: 1.25rem;
+  
+        .list__inside {
+          border-left: .2rem solid v.$Dewey-1-rgba;
+          .nav__link--inside{
+            display: flex;
+            align-items: center;
+            height: 3rem;
+            text-align: left;
+            font-size: 1.4rem;
+            font-weight: 400; 
+            padding-left: 2rem;                                       
+            &:hover{
+              background: #F6F8FA;
+            }
+          }
+        }
+      }
+    }
+  }
+}

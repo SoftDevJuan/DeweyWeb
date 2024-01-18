@@ -1,0 +1,134 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6rem;  
+
+  .contenedor-g--photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .contenedor-photo {
+      position: relative;
+      display: inline-block;
+
+      .photo-learnmore {
+        width: 100%;
+        height: 60rem;
+      }
+
+      .photo-learnmore__texto {
+        position: absolute;
+        top: 70%;
+        left: 5%;
+        color: white;
+        width: 55rem;
+
+        h1 {
+          font-size: 3.2rem;
+        }
+
+        p {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  .contenedor-m--info {
+    height: 100%;
+    margin-top: 2rem;
+
+    h1 {
+      font-size: 2.4rem;
+      letter-spacing: 1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    span {
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .info-iconos {
+      max-height: 100%;
+      margin-top: 2rem;
+      margin-bottom: 10rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 1rem;
+
+      .icono-info {
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+
+        .icono {
+          width: 8.5rem;
+          height: 8.5rem;
+        }
+
+        p {
+          font-family: v.$secundaryFont;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .info-funcion {
+      position: relative;
+      margin-bottom: 10rem;
+      height: 60rem;
+
+      .cuadro{
+        height: 10rem;
+        width: 100%;
+        background-color: white;
+      }
+      .info-funcion__texto{
+        position: absolute;
+        background-color: white;
+        color: v.$Dewey-1-rgba;        
+        padding: 5rem;
+        font-family: v.$MainFont;
+        font-weight: 500;
+        font-size: 2rem;
+        width: 50%;
+        right: 0;
+        box-shadow: -7px 7px 14px -7px rgba(0, 0, 0, 0.36);
+        @include m.escritorio-s{
+          font-size: 2.2rem;
+        }       
+        @include m.escritorio-g{
+          font-size: 2.4rem;
+        }
+
+        ul{
+          list-style-type: none;
+        }
+        li{
+          margin-bottom: 2rem;          
+          &:last-of-type{
+            margin-bottom: 0;
+          }
+          span{
+            font-weight: 700;
+            font-family: v.$MainFont;
+          }
+        }
+      }
+      .photo1-funcion {
+        position: absolute;
+        width: 70%;
+        height: 100%;
+        bottom: 0;        
+      }
+    }
+  }
+}

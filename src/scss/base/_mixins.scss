@@ -1,0 +1,37 @@
+@use 'base/variables' as v;
+
+@mixin telefono{
+  @media (min-width: 480px){
+    @content;
+  }
+}
+@mixin tablet{
+  @media (min-width: 769px){
+    @content;
+  }
+}
+@mixin tablet-g{
+  @media (min-width: 887px){
+    @content;
+  }
+}
+@mixin escritorio-m {
+  @media (min-width: 969px){
+    @content;
+  }
+}
+@mixin escritorio-s{
+  @media (min-width: 1208px) and (min-height: 802px){
+    @content;
+  }
+}
+@mixin escritorio-g{
+  @media (min-width: 1360px) and (min-height: 867px){
+    @content;
+  }
+}
+@mixin escritorio__height-g{
+  @media (min-height: 867px){
+    @content;
+  }
+}

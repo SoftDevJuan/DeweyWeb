@@ -1,0 +1,78 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.fondo-header{
+  background-color: v.$Dewey-1-rgba;
+}
+.header-home {
+  background-color: v.$Dewey-1-rgba;
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  top: 0;
+
+  .header-home__contenedor{
+    display: flex;
+    justify-content: space-between;    
+    align-items: center;
+    width: 100%;
+    height: 100%;    
+    
+    .header-home__logo{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 9%;
+      height: 100%;
+      padding-right: 2rem;
+      background-color: rgba($color: v.$Dewey-2-rgba, $alpha: .2);      
+      .icono{
+        width: 6rem;
+        @include m.escritorio-s {
+          width: 8rem;
+        }
+      
+        @include m.escritorio-g {
+          width: 10rem;
+        }
+      }
+    }
+    .user{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 10%;
+      background-color: rgba($color: v.$Dewey-2-rgba, $alpha: .2);
+      .user__account, .user__help{        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 50%;                
+        .user__photo{
+          height: 2.5rem;
+          cursor: pointer;
+          @include m.escritorio-s {
+            height: 3rem;
+          }
+        
+          @include m.escritorio-g {
+            height: 4rem;
+          }
+        }
+        .help {
+          height: 2rem;
+          @include m.escritorio-s {
+            height: 2.25rem;
+          }
+        
+          @include m.escritorio-g {
+            height: 2.5rem;
+          }
+        }        
+      }      
+    }
+  }
+}
